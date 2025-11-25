@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      min-width: 200px;
+      text-align: center;
+      padding: 10px;
+      font-family: sans-serif;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      margin: 10px 0;
+      width: 60px;
+      text-align: center;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="range"] {
+      width: 180px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    #speedValue {
+      display: inline-block;
+      min-width: 40px;
+      font-weight: bold;
+      color: #4CAF50;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Change speed</h3>
+  <label for="numberInput">Select (0.25-4):</label>
+  <input type="range" id="numberInput" min="0.25" max="4" value="1" step="0.25" />
+  <span id="speedValue">1</span>x
+  <script src="popup.js"></script>
+</body>
+
+</html>
