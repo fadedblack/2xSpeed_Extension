@@ -1,3 +1,10 @@
+// Load saved speed when popup opens
+chrome.storage.local.get(['speed'], (result) => {
+  const savedSpeed = result.speed || 1.0;
+  document.getElementById("numberInput").value = savedSpeed;
+  document.getElementById("speedValue").textContent = savedSpeed;
+});
+
 document.getElementById("numberInput").addEventListener("input", () => {
   const speed = parseFloat(document.getElementById("numberInput").value);
   document.getElementById("speedValue").textContent = speed;
@@ -13,6 +20,8 @@ document.getElementById("numberInput").addEventListener("change", async () => {
     document.getElementById("speedValue").textContent = 1;
     return;
   }
+
+  chrome.storage.local.set({ speed });
 
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 

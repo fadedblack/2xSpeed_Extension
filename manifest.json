@@ -7,6 +7,22 @@
     "default_popup": "popup.html",
     "default_icon": "speedometer.png"
   },
-  "permissions": ["activeTab", "scripting"],
-  "host_permissions": ["<all_urls>"]
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
 }
